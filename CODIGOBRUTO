@@ -35,8 +35,8 @@ while True:
                 botao_logar = driver.find_element(By.XPATH, '/html/body/div/div/div/div/div/div[1]/form/div[3]/button')
 
                 # Faça login
-                campo_email.send_keys("wendy.dias@proocupacional.com.br")
-                campo_senha.send_keys("28012016")
+                campo_email.send_keys("EMAIL PARA ACESSO")
+                campo_senha.send_keys("SENHA PARA ACESSO")
                 botao_logar.click()
                 wait = WebDriverWait(driver, 30)
                 time.sleep(1)
@@ -68,10 +68,9 @@ while True:
                 pyautogui.click(713, 800)
                 time.sleep(2)
                 contatos = driver.find_element(By.XPATH, "//a[contains(text(), 'Contatos')]").click()
-                time.sleep(5)
-                assinaseleciona = driver.find_element(By.XPATH,
-                                                      "/html/body/div[5]/div[2]/div/div[2]/div[1]/div[3]/table/tbody/tr[1]/td[1]/input").click()
-                time.sleep(1)
+                time.sleep(2)
+                pyautogui.click(613, 446)
+                time.sleep(3)
                 confirmaassina = driver.find_element(By.XPATH,
                                                      "/html/body/div[5]/div[2]/div/div[2]/div[1]/div[4]/div[1]/button").click()
                 time.sleep(1)
@@ -90,10 +89,10 @@ while True:
                 time.sleep(1)
                 enviarparaassinatura = driver.find_element(By.XPATH,
                                                            "/html/body/div[5]/div[2]/div/div[2]/div[1]/form[1]/input[5]").click()
-
+                os.remove(caminho_arquivo)
                 driver.close()
 
-                os.remove(caminho_arquivo)
+
     except:
         print("ERRO TRY FULL CODE")
         continue
